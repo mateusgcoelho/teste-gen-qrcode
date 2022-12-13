@@ -3,7 +3,7 @@ import { useState } from "react";
 import QRCode from "react-qr-code";
 import { Input } from "../components/input";
 import { styled, theme } from "../styles";
-import { HStack, Main, Spacer, VStack } from "../styles/global";
+import { HStack, Main, Spacer } from "../styles/global";
 
 import QRCodeLink from "qrcode";
 import { Button } from "../components/button";
@@ -17,8 +17,8 @@ const Header = styled("header", {
 
 const HeaderContent = styled("section", {
   width: "100%",
-  maxWidth: 1400,
-  padding: "12px 24px",
+  maxWidth: 1000,
+  padding: "12px 0",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
@@ -132,9 +132,13 @@ function Dashboard() {
         </HeaderContent>
       </Header>
 
-      <VStack
+      <div
         style={{
-          maxWidth: 1200,
+          width: "100%",
+          maxWidth: 1000,
+          display: "flex",
+          alignItems: "start",
+          justifyContent: "space-between",
         }}
       >
         <HStack
@@ -232,7 +236,11 @@ function Dashboard() {
 
         <HStack
           style={{
-            maxWidth: 400,
+            margin: "0",
+            maxWidth: 300,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           {qrCode != "" && (
@@ -247,9 +255,17 @@ function Dashboard() {
             </>
           )}
 
-          {qrCode == "" && <p>Preencha as informações e gere o qrCode!</p>}
+          {qrCode == "" && (
+            <p
+              style={{
+                textAlign: "center",
+              }}
+            >
+              Preencha as informações e gere o qrCode!
+            </p>
+          )}
         </HStack>
-      </VStack>
+      </div>
     </Main>
   );
 }
