@@ -71,7 +71,7 @@ function Dashboard() {
         idLoja +
         ',"nomeFantasia":"' +
         nomeFantasia +
-        '", "urlApi":"' +
+        '", "hostUrl":"' +
         urlApi +
         '"}'
     );
